@@ -3,7 +3,7 @@
     --function-space-height: 28px;
 
     --repeat-width: 58px;
-    --command-width: 78px;
+    --command-width: 82px;
 
     --number-space-height: 60px;
     --height: 50px;
@@ -13,9 +13,9 @@
 }
 
 .keyboard-space {
-    height: 500px;
-    width: 840px;
-    background-color: bisque;
+    height: 334px;
+    width: 860px;
+    background-color: #efeeee;
 }
 
 body {
@@ -26,25 +26,38 @@ body {
     font-size: 12px;
 }
 
-body, p , ul, div, ol, li {
+body,
+p,
+ul,
+div,
+ol,
+li {
     padding: 0;
     margin: 0;
 }
 
 .keyboard-function-space {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     height: var(--function-space-height);
     display: grid;
-    grid-template-columns: repeat(14, 60px);
+    grid-template-columns: repeat(14, 61px);
 }
 
 .keyboard-function-space p {
     height: var(--function-height);
     width: calc(100% - 10px);
-    background-color: aqua;
     margin: 4px 0 0 5px;
     text-align: center;
     line-height: var(--function-height);
+    border-radius: 4px;
+    /* background-color: aqua; */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 1);
+    transition: all 0.2s ease-out;
+}
+
+.keyboard-function-space p:hover {
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8), inset 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
 }
 
 .keyboard-number-space {
@@ -76,7 +89,9 @@ body, p , ul, div, ol, li {
     text-align: end;
 }
 
-.keyboard-word-space-one, .keyboard-word-space-two, .keyboard-word-space-three,
+.keyboard-word-space-one,
+.keyboard-word-space-two,
+.keyboard-word-space-three,
 .keyboard-assist-space {
     white-space: pre-line;
     display: grid;
@@ -104,11 +119,45 @@ body, p , ul, div, ol, li {
 }
 
 .keyboard-assist-space {
-    grid-template-columns: repeat(3, calc(var(--repeat-width) - 4px)) var(--command-width) calc(var(--repeat-width) * 5)
-    var(--command-width) var(--repeat-width) 1fr;
+    grid-template-columns: repeat(3, calc(var(--repeat-width))) var(--command-width) calc(var(--repeat-width) * 5) var(--command-width) var(--repeat-width) 1fr;
+}
+
+.keyboard-assist-space p {
+    width: calc(var(--repeat-width) - 20px);
 }
 
 .keyboard-assist-space .command-left,
 .keyboard-assist-space .command-right {
-    width: calc(var(--command-width) - 10px);
+    width: calc(var(--command-width) - 20px);
+}
+
+.keyboard-assist-space .space {
+    width: calc(var(--repeat-width) * 5 - 20px)
+}
+
+.keyboard-assist-space .position {
+    width: calc(100% - 20px);
+}
+
+.keyboard-assist-space .fn,
+.keyboard-assist-space .option-left {
+    text-align: left;
+}
+
+.keyboard-assist-space .option-rignt {
+    text-align: right;
+}
+
+.position p {
+    background-color: chartreuse;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    width: 36px;
+    display: inline-block;
+}
+
+.position-top,
+.position-other {
+    text-align: center;
 }
