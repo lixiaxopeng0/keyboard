@@ -1,0 +1,114 @@
+:root {
+    --function-height: 20px;
+    --function-space-height: 28px;
+
+    --repeat-width: 58px;
+    --command-width: 78px;
+
+    --number-space-height: 60px;
+    --height: 50px;
+    --width: 50px;
+
+    --key-color: aliceblue;
+}
+
+.keyboard-space {
+    height: 500px;
+    width: 840px;
+    background-color: bisque;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 12px;
+}
+
+body, p , ul, div, ol, li {
+    padding: 0;
+    margin: 0;
+}
+
+.keyboard-function-space {
+    background-color: aliceblue;
+    height: var(--function-space-height);
+    display: grid;
+    grid-template-columns: repeat(14, 60px);
+}
+
+.keyboard-function-space p {
+    height: var(--function-height);
+    width: calc(100% - 10px);
+    background-color: aqua;
+    margin: 4px 0 0 5px;
+    text-align: center;
+    line-height: var(--function-height);
+}
+
+.keyboard-number-space {
+    white-space: pre-line;
+    background-color: yellowgreen;
+    display: grid;
+    grid-template-columns: repeat(13, var(--repeat-width)) 1fr;
+    height: var(--number-space-height);
+}
+
+.keyboard-number-space p,
+.keyboard-word-space-one p,
+.keyboard-word-space-two p,
+.keyboard-word-space-three p,
+.keyboard-assist-space p {
+    height: var(--height);
+    width: calc(var(--width) - 10px);
+    padding: 0 5px;
+    background-color: aqua;
+    margin: 5px 0 0 5px;
+    text-align: center;
+    line-height: 26px;
+}
+
+.keyboard-number-space .delete,
+.keyboard-word-space-two .enter,
+.keyboard-word-space-three .shift {
+    width: calc(100% - 20px);
+    text-align: end;
+}
+
+.keyboard-word-space-one, .keyboard-word-space-two, .keyboard-word-space-three,
+.keyboard-assist-space {
+    white-space: pre-line;
+    display: grid;
+    height: var(--number-space-height);
+    background-color: yellowgreen;
+}
+
+.keyboard-word-space-one {
+    grid-template-columns: 1fr repeat(13, var(--repeat-width));
+}
+
+.keyboard-word-space-one .tab,
+.keyboard-word-space-two .caps-lock,
+.keyboard-word-space-three .shift-left {
+    width: calc(100% - 20px);
+    text-align: start;
+}
+
+.keyboard-word-space-two {
+    grid-template-columns: 1fr repeat(11, var(--repeat-width)) 1fr;
+}
+
+.keyboard-word-space-three {
+    grid-template-columns: 1fr repeat(10, var(--repeat-width)) 1fr;
+}
+
+.keyboard-assist-space {
+    grid-template-columns: repeat(3, calc(var(--repeat-width) - 4px)) var(--command-width) calc(var(--repeat-width) * 5)
+    var(--command-width) var(--repeat-width) 1fr;
+}
+
+.keyboard-assist-space .command-left,
+.keyboard-assist-space .command-right {
+    width: calc(var(--command-width) - 10px);
+}
