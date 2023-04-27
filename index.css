@@ -16,6 +16,7 @@
     height: 334px;
     width: 860px;
     background-color: #efeeee;
+    padding: 3px 5px 2px 5px;
 }
 
 body {
@@ -51,18 +52,11 @@ li {
     line-height: var(--function-height);
     border-radius: 4px;
     /* background-color: aqua; */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 1);
-    transition: all 0.2s ease-out;
-}
-
-.keyboard-function-space p:hover {
-    cursor: pointer;
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8), inset 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
 }
 
 .keyboard-number-space {
     white-space: pre-line;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     display: grid;
     grid-template-columns: repeat(13, var(--repeat-width)) 1fr;
     height: var(--number-space-height);
@@ -76,7 +70,7 @@ li {
     height: var(--height);
     width: calc(var(--width) - 10px);
     padding: 0 5px;
-    background-color: aqua;
+    /* background-color: aqua; */
     margin: 5px 0 0 5px;
     text-align: center;
     line-height: 26px;
@@ -96,7 +90,7 @@ li {
     white-space: pre-line;
     display: grid;
     height: var(--number-space-height);
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
 }
 
 .keyboard-word-space-one {
@@ -149,7 +143,7 @@ li {
 }
 
 .position p {
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     height: 18px;
     text-align: center;
     line-height: 18px;
@@ -157,7 +151,66 @@ li {
     display: inline-block;
 }
 
-.position-top,
+.position {
+    box-shadow: none !important;
+}
+
+.position-up,
 .position-other {
     text-align: center;
 }
+
+
+/* 按键样式 */
+.keyboard-space p {
+    border-radius: 3px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2), -5px -5px 10px rgba(255, 255, 255, 1);
+    transition: all 0.2s ease-out;
+}
+
+.keyboard-space .key-down {
+    cursor: pointer;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2), 0 0 0 rgba(255, 255, 255, 0.8), inset 5px 5px 10px rgba(0, 0, 0, 0.1), -5px -5px 10px rgba(255, 255, 255, 1);
+    transform: scale(0.8);
+}
+
+.keyboard-space .position {
+    transform: none;
+}
+
+/* 输入框样式 */
+.text-show {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+input {
+   width: 400px;
+   border-radius: 10px;
+   border: 1px solid #b6b6b6;
+   height: 25px;
+   padding: 0 10px;
+   letter-spacing: 1px;
+}
+
+/* lock锁灯 */
+.caps-lock {
+    position: relative;
+}
+.caps-lock::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #dad7d7;
+    display: inherit;
+    position: absolute;
+    top: 5px;
+    border-radius: 50%;
+}
+
+.locked::before {
+    background: hsl(120, 85%, 78%);
+    box-shadow: 0px 2px 3px hsl(120, 85%, 78%);
+}
+
